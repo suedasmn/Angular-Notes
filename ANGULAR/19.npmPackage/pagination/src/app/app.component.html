@@ -1,0 +1,22 @@
+<ul>
+  <li
+    *ngFor="let n of collection | 
+    paginate: {itemsPerPage: pageSize, 
+    currentPage: pageNumber}">
+    {{n}}
+  </li>
+</ul>
+<pagination-controls
+  (pageChange)="p=$event"
+  previousLabel="Önceki"
+  nextLabel="Sonraki">
+</pagination-controls>
+<select [(ngModel)]="pageSize">
+  <option>5</option>
+  <option>10</option>
+  <option>15</option>
+  <option>20</option>
+  <option>50</option>
+  <option>100</option>
+</select>
+
